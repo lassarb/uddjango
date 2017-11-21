@@ -8,10 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Static Files</title>
     <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    
 </head>
 <body>
     <h2>Static Files</h2>
 {#  <img src="static/img/pizza.jpg" alt="photo"> #}
-    <img src="{% static '/img/pizza.jpg' alt='photo' %}">
+    <img src="{% static 'img/pizza.jpg' %}" alt='photo' >
 </body>
 </html>

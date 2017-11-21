@@ -16,15 +16,16 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 # from testurlapp import views
-# from teststaticapp import views
+
 from mysite import views
+from teststaticapp import views
 
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^$', views.home, name='index'),
-    url(r'^$', views.home, name='home'),
+    url(r'^$', views.home, name='index'),
+    # url(r'^$', views.home, name='home'),
     # url(r'^test_app/', include('testurlapp.test_urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
