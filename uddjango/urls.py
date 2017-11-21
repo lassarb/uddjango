@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 # from testurlapp import views
+from teststaticapp import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^$', views.home, name='home')
-    url(r'^test_app/', include('testurlapp.test_urls'))
+    url(r'^$', views.home, name='index'),
+    # url(r'^test_app/', include('testurlapp.test_urls'))
 ]
