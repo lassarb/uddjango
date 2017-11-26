@@ -18,7 +18,7 @@ from django.contrib import admin
 # from testurlapp import views
 
 from mysite import views
-from teststaticapp import views
+# from teststaticapp import views
 
 from django.conf.urls.static import static
 from django.conf import settings

@@ -6,13 +6,28 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Static Files</title>
-    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <title>Home Page</title>
+    {# <link rel="stylesheet" href="{% static 'css/test.css' %}"> #}
     
 </head>
 <body>
-    <h2>Static Files</h2>
+    <h2>Это страница Index.html</h2>
+
+{#    {{ insert_me }}#}
 {#  <img src="static/img/pizza.jpg" alt="photo"> #}
-    <img src="{% static 'img/pizza.jpg' %}" alt='photo' >
+    {# <img src="{% static 'img/pizza.jpg' %}" alt='photo' > #}
+    {#        div>h2+div*2 #}
+
+    {% for key in a1 %}
+        <div>
+            <h2>{{ key.name }}</h2>
+                {% if key.photo %}
+                    <img src="{{ key.photo.url }}" alt="{{ key.name }}">
+                {% endif %}
+            <div>{{ key.short_description }}</div>
+            <div>{{ key.price|floatformat:"2" }}</div>
+        </div>
+    {% endfor %}
+
 </body>
 </html>
