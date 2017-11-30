@@ -1,23 +1,9 @@
-{% load staticfiles %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Page</title>
-    {# <link rel="stylesheet" href="{% static 'css/test.css' %}"> #}
-
-</head>
-<body>
-<h2>Это страница Index.html</h2>
-
-{#    {{ insert_me }}#}
-{#  <img src="static/img/pizza.jpg" alt="photo"> #}
-{# <img src="{% static 'img/pizza.jpg' %}" alt='photo' > #}
-{#        div>h2+div*2 #}
-
+{% extends 'base.html' %}
+{% block title %}
+ Пицца {{ apizza.name }}
+{% endblock title %}
+{% block page %}
+<a href="{% url 'home1' %}">Главная</a>
     <div>
         <h2>{{ apizza.name }}</h2>
         {% if apizza.photo %}
@@ -26,6 +12,4 @@
         <div>{{ apizza.short_description }}</div>
         <div>{{ apizza.price|floatformat:"2" }}</div>
     </div>
-
-</body>
-</html>
+{% endblock page %}
