@@ -12,4 +12,9 @@
         <div>{{ apizza.short_description }}</div>
         <div>{{ apizza.price|floatformat:"2" }}</div>
     </div>
+    <h2>Заказ</h2>
+    <form method="POST">
+    {{ myform.as_ul }}
+        <input type="submit" value="Оеправить заказ">
+    </form>
 {% endblock page %}

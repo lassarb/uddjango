@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from mysite.models import Pizza
+from mysite.forms import OrderForm
 
 
 def home(request):
@@ -13,4 +14,10 @@ def home(request):
 
 def pizza_detail(request, pizza_id):
     pizza = get_object_or_404(Pizza, id=pizza_id)
-    return render(request, 'pizza_detail.html', {'apizza': pizza})
+    form = OrderForm(initial={
+        'pizza':pizza
+    })
+    return render(request, 'pizza_detail.html', {
+        'apizza': pizza,
+        'myform': form
+    })
